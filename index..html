@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alimentación del lactante · Acompañando el crecimiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#FFFBF5;--ink:#3B3550;--soft:#6B6580;--mint:#CFEBDD;--peach:#FFD9C2;--butter:#FFF1B8;--lav:#E3D9F5;--sky:#D2E8F7;--pink:#FAD4DE;--line:#E9E2F2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:Fredoka,Nunito,sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:700}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:62ch}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid #8E7CC3;outline-offset:3px}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,251,245,.92);backdrop-filter:blur(8px);display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px 12px;border-bottom:2px solid var(--line)}
+nav a{font:600 1rem Fredoka,sans-serif;color:var(--ink);text-decoration:none;padding:8px 16px;border-radius:999px;background:var(--lav)}
+nav a:nth-child(2){background:var(--mint)}nav a:nth-child(3){background:var(--peach)}nav a:nth-child(4){background:var(--pink)}nav a:nth-child(5){background:var(--sky)}
+nav a:hover{transform:translateY(-2px)}
+section{padding:64px 20px;max-width:1100px;margin:0 auto}
+.band{max-width:none;background:var(--c,#fff)}.band>.in{max-width:1100px;margin:0 auto}
+.hero{background:linear-gradient(160deg,var(--butter),var(--pink) 55%,var(--lav));max-width:none;position:relative;overflow:hidden;text-align:center;padding:80px 20px 90px}
+.hero p{margin-inline:auto;font-size:1.25rem}
+.float{position:absolute;font-size:3rem;opacity:.9;animation:bob 5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-18px) rotate(8deg)}}
+.ages{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:900px;margin:34px auto 0;position:relative}
+.age{border:0;border-radius:28px;padding:22px 16px;background:#fff;box-shadow:0 8px 0 rgba(59,53,80,.12);transition:transform .15s,box-shadow .15s;text-align:center}
+.age:hover{transform:translateY(-4px)}.age:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(59,53,80,.12)}
+.age b{display:block;font:700 1.7rem Fredoka;margin-bottom:4px}.age span{font-size:.95rem;color:var(--soft)}
+.age:nth-child(1){background:var(--mint)}.age:nth-child(2){background:var(--peach)}.age:nth-child(3){background:var(--sky)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{border:2px solid var(--line);background:#fff;border-radius:999px;padding:10px 22px;font:600 1.05rem Fredoka}
+.tab[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.panel[hidden]{display:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:#fff;border-radius:26px;padding:24px;border:2px solid var(--line)}
+.card.m{background:var(--mint);border-color:transparent}.card.p{background:var(--peach);border-color:transparent}.card.l{background:var(--lav);border-color:transparent}.card.b{background:var(--butter);border-color:transparent}.card.s{background:var(--sky);border-color:transparent}.card.k{background:var(--pink);border-color:transparent}
+.stomach{display:grid;place-items:center;height:190px}
+#orb{border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7,transparent 40%),#F4A6B8;display:grid;place-items:center;font-size:2.4rem;transition:all .35s cubic-bezier(.3,1.6,.5,1)}
+input[type=range]{width:100%;accent-color:#8E7CC3}
+.steps{display:flex;justify-content:space-between;font:600 .85rem Fredoka;color:var(--soft)}
+.chk{display:flex;gap:12px;align-items:center;padding:12px 14px;background:#fff;border-radius:18px;margin-bottom:10px;cursor:pointer}
+.chk input{width:24px;height:24px;accent-color:#5DAA8B}
+.bar{height:14px;background:#fff;border-radius:99px;overflow:hidden;margin:14px 0 8px}
+.bar i{display:block;height:100%;width:0;background:#7CC6A4;border-radius:99px;transition:width .4s}
+.cmp{display:flex;background:var(--lav);border-radius:999px;padding:5px;width:fit-content;margin-bottom:20px}
+.cmp button{border:0;background:none;border-radius:999px;padding:10px 24px;font:600 1.05rem Fredoka}
+.cmp button[aria-pressed=true]{background:#fff;box-shadow:0 2px 6px #0002}
+ul.t{padding-left:1.2em;margin:0}ul.t li{margin-bottom:.4em}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:560px}
+.day{aspect-ratio:1;border:0;border-radius:14px;background:#fff;font:600 1rem Fredoka;position:relative}
+.day.done{background:#7CC6A4;color:#fff}.day.new::after{content:"";position:absolute;top:5px;right:5px;width:8px;height:8px;border-radius:50%;background:#F08A5D}
+#dayinfo{margin-top:14px;min-height:3.2em;font-weight:600}
+.timeline{display:flex;gap:0;flex-wrap:wrap}
+.tl{flex:1 1 150px;padding:16px;text-align:center;background:var(--c);font:600 1.05rem Fredoka}
+.tl small{display:block;font:400 .9rem Nunito}
+.tl:first-child{border-radius:22px 0 0 22px}.tl:last-child{border-radius:0 22px 22px 0}
+.meals{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.meals span{background:#fff;border-radius:999px;padding:8px 18px;font:600 1rem Fredoka}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
+.sty{border:0;border-radius:22px;padding:18px;text-align:left;min-height:110px}
+.sty b{font:700 1.15rem Fredoka;display:block}.sty small{font-size:.85rem}
+.sty[aria-pressed=true]{outline:4px solid var(--ink)}
+#styinfo{margin-top:14px;font-weight:600;min-height:4.5em}
+.rule{margin-top:28px;border:0;width:100%;text-align:center;background:linear-gradient(100deg,#F9B8A0,#F8C8DC);border-radius:30px;padding:30px 22px;font:700 clamp(1.3rem,3vw,2rem) Fredoka;transition:transform .2s}
+.rule:hover{transform:scale(1.015)}
+.rule small{display:block;font:400 1rem Nunito;margin-top:8px}
+.food{border:0;background:#fff;border-radius:16px;padding:10px 16px;font:600 1rem Nunito;cursor:grab;margin:0 8px 8px 0;border:2px solid var(--line)}
+#plate{min-height:230px;border-radius:50%/30%;background:#fff;border:6px dashed #B9A7E0;padding:22px;text-align:center;display:flex;flex-wrap:wrap;gap:8px;align-content:center;justify-content:center;transition:background .3s}
+#plate.over{background:var(--butter)}#plate.ok{background:var(--mint);border-style:solid}
+.chip{border-radius:999px;padding:6px 14px;font:600 .95rem Nunito}
+.cats{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.cats span{padding:4px 12px;border-radius:99px;background:#fff;font:600 .85rem Fredoka;opacity:.5}.cats span.on{opacity:1;background:#7CC6A4;color:#fff}
+#q{width:100%;padding:14px 20px;border-radius:999px;border:2px solid var(--line);font:inherit;margin-bottom:14px}
+.bad{background:#fff;border-radius:18px;padding:12px 16px;margin-bottom:8px}.bad b{color:#C2544E}
+details{background:#fff;border-radius:20px;padding:16px 20px;margin-bottom:10px;border:2px solid var(--line)}
+summary{font:600 1.15rem Fredoka;cursor:pointer}
+footer{text-align:center;padding:30px 20px 50px;color:var(--soft);font-size:.9rem}
+@media(max-width:600px){.matrix{grid-template-columns:1fr}.tl:first-child,.tl:last-child{border-radius:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.txg{display:grid;grid-template-columns:minmax(280px,400px) 1fr;gap:28px;align-items:start}
+.bowl{width:210px;height:120px;border-radius:14px 14px 105px 105px;border:5px solid #fff;box-shadow:0 8px 0 rgba(59,53,80,.1);margin:auto}
+.tx-1{background:radial-gradient(circle at 30% 30%,#FFE9CC,#F7C58C)}
+.tx-2{background:radial-gradient(#E3A05A 1.5px,transparent 2px) 0 0/8px 8px,#F9D3A0}
+.tx-3{background:radial-gradient(#E3A05A 4px,transparent 5px) 0 0/17px 15px,radial-gradient(#F2B26A 5px,transparent 6px) 8px 7px/17px 15px,#FBDDB2}
+.tx-4{background:conic-gradient(#F2B26A 25%,#FFD9A8 0 50%,#F2B26A 0 75%,#FFD9A8 0) 0 0/30px 30px}
+.gl{font:700 .85rem Fredoka;color:var(--soft);margin:10px 0 4px;text-transform:uppercase;letter-spacing:.04em}
+.fbox{background:var(--butter);border-radius:26px;padding:22px 26px;display:flex;gap:20px;align-items:center;grid-column:1/-1}
+.fbox .e{font-size:3.2rem}
+@media(max-width:700px){.txg{grid-template-columns:1fr}.fbox{flex-direction:column;text-align:center}}
+.zw{overflow:hidden;border-radius:22px;background:var(--lav)}
+.tsvg{display:block;width:100%;height:auto;transition:transform .5s;transform-origin:36% 52%}
+.tsvg.z{transform:scale(2.3)}
+.day{display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}
+.tg{font:700 .62rem Fredoka;color:#C2544E}
+.cmp{flex-wrap:wrap;border-radius:26px}
+.ing{background:var(--butter);border-radius:16px;padding:8px 14px;font-weight:600;display:inline-block}
+</style>
+</head>
+<body>
+<nav aria-label="Navegación principal">
+<a href="#inicio">Inicio</a><a href="#etapas">Etapas</a><a href="#metodos">Métodos y recetas</a><a href="#texturas">Texturas</a><a href="#herramientas">Herramientas</a>
+</nav>
+
+<header id="inicio" class="hero">
+<span class="float" style="left:6%;top:14%">🥕</span><span class="float" style="right:8%;top:10%;animation-delay:1s">🍼</span><span class="float" style="left:12%;bottom:8%;animation-delay:2s">🥑</span><span class="float" style="right:14%;bottom:10%;animation-delay:3s">🥄</span>
+<h1>Bienvenido a la alimentación de tu bebé</h1>
+<p>Acompañando el crecimiento de manera segura, nutricional y afectiva. ¿En qué etapa está tu bebé?</p>
+<div class="ages">
+<button class="age" data-go="0"><b>0 a 6 meses</b><span>Lactancia exclusiva (materna o artificial)</span></button>
+<button class="age" data-go="1"><b>6 a 12 meses</b><span>Alimentación complementaria (tradicional o BLW)</span></button>
+<button class="age" data-go="2"><b>12 a 24 meses</b><span>Transición a la mesa familiar</span></button>
+</div>
+</header>
+
+<section id="etapas">
+<h2>Paso a paso por etapas</h2>
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" aria-selected="true">0 a 6 meses</button>
+<button class="tab" role="tab" aria-selected="false">6 a 12 meses</button>
+<button class="tab" role="tab" aria-selected="false">12 a 24 meses</button>
+</div>
+
+<div class="panel" role="tabpanel">
+<div class="grid">
+<div class="card k">
+<h3>Capacidad del estómago</h3>
+<div class="stomach"><div id="orb"></div></div>
+<input type="range" id="stom" min="0" max="3" value="0" aria-label="Edad del bebé">
+<div class="steps"><span>Día 1</span><span>Día 3</span><span>Día 7</span><span>Mes 1</span></div>
+<p id="stomtxt" style="margin:12px 0 0;font-weight:600"></p>
+</div>
+<div class="card m">
+<h3>Técnica y acople</h3>
+<ul class="t"><li>Boca bien abierta, labio inferior hacia afuera.</li><li>Mentón del bebé contra el pecho y barriga con barriga.</li><li>Si duele, retira con suavidad y vuelve a acoplar.</li></ul>
+</div>
+<div class="card s">
+<h3>Volumen y frecuencia (fórmula)</h3>
+<ul class="t"><li>Primeros días: 30 ml por vez, aumentando de a poco.</li><li>A los 5 meses: unos 200 ml por vez (140–160 ml por kg al día).</li><li>Primeros 2–3 meses: cada 3–4 horas. A los 6 meses: cada 4 horas.</li></ul>
+</div>
+<div class="card b">
+<h3>Mamadera segura</h3>
+<ul class="t"><li>Dilución al 13 %–14 %: respeta los medidores del envase.</li><li>No agregues más polvo para “reforzar”: sobrecarga el riñón.</li><li>Lava y esteriliza el material antes de cada preparación.</li></ul>
+</div>
+</div>
+</div>
+
+<div class="panel" role="tabpanel" hidden>
+<div class="grid">
+<div class="fbox"><div class="e">🤱</div><div><h3>Primero la leche, después la comida</h3><p style="margin:0">Ofrece siempre la leche materna antes de proponer un alimento nuevo (o fórmula, si no recibe pecho). Así el bebé no llega con hambre y no se frustra al probar algo desconocido: la experiencia es más tranquila y disfrutable. Durante este periodo, la leche sigue siendo su alimento principal.</p></div></div>
+<div class="card m">
+<h3>Señales de madurez</h3>
+<label class="chk"><input type="checkbox"> Mantiene la cabeza erguida y se sienta sin apoyo</label>
+<label class="chk"><input type="checkbox"> Perdió el reflejo de extrusión</label>
+<label class="chk"><input type="checkbox"> Muestra interés por la comida y lleva objetos a la boca</label>
+<div class="bar"><i id="bar"></i></div>
+<p id="chkmsg" style="margin:0;font-weight:600">Marca lo que ya observas.</p>
+</div>
+<div class="card p">
+<h3>Dos caminos, un mismo objetivo</h3>
+<p>Papillas (tradicional) o BLW: revisa la comparativa en <a href="#metodos">Métodos y recetas</a> y arma el calendario de tu primer mes.</p>
+<p style="margin:0">Hierro (Fe) y DHA son los nutrientes críticos que no deben faltar.</p>
+</div>
+</div>
+</div>
+
+<div class="panel" role="tabpanel" hidden>
+<h3>Evolución de texturas</h3>
+<p>Mira cada textura con ejemplos en la sección <a href="#texturas">Texturas</a>.</p>
+<div class="timeline">
+<div class="tl" style="--c:var(--mint)">Papilla<small>6 meses</small></div>
+<div class="tl" style="--c:var(--butter)">Puré grueso<small>8–9 meses</small></div>
+<div class="tl" style="--c:var(--peach)">Molido con tenedor<small>12 meses</small></div>
+<div class="tl" style="--c:var(--sky)">Picado<small>18 meses</small></div>
+</div>
+<div class="card l" style="margin-top:22px">
+<h3>Horarios y rutinas</h3>
+<p>4 tiempos de comida principales, reduciendo las tomas nocturnas:</p>
+<div class="meals"><span>🌅 Desayuno</span><span>🍲 Almuerzo</span><span>🍞 Once</span><span>🌙 Cena</span></div>
+</div>
+</div>
+</section>
+
+<section id="metodos" class="band" style="--c:#FFF4EA"><div class="in">
+<h2>Métodos y recetas (6 a 12 meses)</h2>
+<div class="cmp" role="group" aria-label="Método">
+<button aria-pressed="true" data-m="0">Tradicional (papillas)</button><button aria-pressed="false" data-m="1">BLW</button><button aria-pressed="false" data-m="2">Cómo hacer un BLW correcto</button>
+</div>
+<div class="card p" id="method" style="margin-bottom:34px"></div>
+<h3>Calendario del primer mes</h3>
+<p>Un alimento nuevo por día, de uno en uno, evaluando la tolerancia durante el día (nunca en la noche). <b>Fe</b>: fuente de hierro · <b>vC</b>: vitamina C. Toca un día para registrar cómo lo recibió: <span style="background:#7CC6A4;padding:0 8px;border-radius:9px">verde</span> se lo come y le sienta bien, <span style="background:#F6D96B;padding:0 8px;border-radius:9px">amarillo</span> se lo come pero le sienta mal, <span style="background:#F08A8A;padding:0 8px;border-radius:9px">rojo</span> no se lo come (vuelve a ofrecerlo más adelante). Si hay antecedentes familiares de alergia, prueba cada alimento 3 días seguidos.</p>
+<div class="cal" id="cal"></div>
+<div id="dayinfo">Elige un día para ver qué ofrecer.</div>
+</div></section>
+
+<section id="texturas">
+<h2>Consistencias: cómo debe verse y sentirse</h2>
+<p>Cada bebé avanza a su ritmo. Las ilustraciones son recreaciones: usa 🔍 para verlas de cerca y la cuchara para probar cómo cae.</p>
+<div class="tabs" id="txtabs"></div>
+<div class="card" id="txpanel" style="background:#fff"></div>
+</section>
+
+<section id="herramientas" class="band" style="--c:#EEF6FC"><div class="in">
+<h2>Herramientas interactivas</h2>
+<div class="grid">
+<div class="card" style="background:#fff">
+<h3>Arma tu papilla</h3>
+<p>Elige un alimento de cada grupo (arrástralo al plato o tócalo). La papilla siempre lleva <b>tubérculo</b> (como la papa), porque da la consistencia cremosa, además de cereal, proteína, vegetal y aceite crudo. El postre de fruta es opcional. Al cambiar de alimento en un grupo, reemplaza al anterior.</p>
+<div id="foods"></div>
+<div id="plate" aria-live="polite"></div>
+<div class="cats" id="cats"></div>
+<p id="platemsg" style="text-align:center;font-weight:700;margin:12px auto 0"></p>
+<p style="text-align:center;margin:8px auto 0"><button class="tab" id="reset">Vaciar plato</button></p>
+</div>
+<div>
+<h3>Alimentos a evitar antes del primer año</h3>
+<input id="q" type="search" placeholder="Busca: sal, miel, jugos…" aria-label="Buscar alimento">
+<div id="bads"></div>
+</div>
+</div>
+<h3 style="margin-top:36px">Preguntas frecuentes</h3>
+<details><summary>¿Qué hago si rechaza un alimento?</summary><p style="margin-top:10px">No lo fuerces. Reofrécelo otro día y en distintas preparaciones: puede necesitar varias oportunidades.</p></details>
+<details><summary>¿Cuánta agua debe tomar?</summary><p style="margin-top:10px">Entre 20 y 50 ml, 2 a 3 veces al día, separada de las comidas.</p></details>
+</div></section>
+
+<footer>Material educativo. Ante dudas sobre la salud de tu bebé, consulta a su equipo de salud.</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+// Tabs
+const tabs=$$('.tab[role=tab]'),panels=$$('.panel');
+function showTab(i){tabs.forEach((t,j)=>t.setAttribute('aria-selected',i==j));panels.forEach((p,j)=>p.hidden=i!=j)}
+tabs.forEach((t,i)=>t.onclick=()=>showTab(i));
+$$('.age').forEach(b=>b.onclick=()=>{showTab(+b.dataset.go);$('#etapas').scrollIntoView()});
+// Stomach
+const st=[["Día 1","Cereza","5 a 7 ml",46,"🍒"],["Día 3","Nuez","22 a 27 ml",76,"🌰"],["Día 7","Albaricoque","45 a 60 ml",110,"🍑"],["Mes 1","Huevo","80 a 150 ml",150,"🥚"]];
+function stom(){const s=st[$('#stom').value],o=$('#orb');o.style.width=o.style.height=s[3]+'px';o.textContent=s[4];$('#stomtxt').textContent=s[0]+": tamaño de "+s[1].toLowerCase()+", unos "+s[2]+" por toma."}
+$('#stom').oninput=stom;stom();
+// Checklist
+const cks=$$('.chk input');
+cks.forEach(c=>c.onchange=()=>{const n=cks.filter(x=>x.checked).length;$('#bar').style.width=n/3*100+'%';$('#chkmsg').textContent=n==3?"¡Listo! Tu bebé muestra las señales para comenzar.":n?"Faltan "+(3-n)+" señal(es). Observa unos días más.":"Marca lo que ya observas."});
+// Methods
+const bl=(t,l)=>`<div class="card"><h3>${t}</h3><ul class="t">${l.map(x=>'<li>'+x+'</li>').join('')}</ul></div>`;
+const meth=[`<h3>Tradicional: sopa puré</h3><ul class="t"><li>Cereal + vegetales variados + carne baja en grasa (vacuno, pollo o pescado), con aceite vegetal crudo al final.</li><li>Condimentos naturales (orégano, comino, laurel). Sin sal, azúcar ni edulcorantes.</li><li>Tibia (37 °C). No la soples ni la pruebes con la misma cuchara.</li><li>Cantidad: al inicio, pequeña. A los 8 meses 150 ml (¾ taza) más 100 ml de fruta; a los 9 meses 200 ml (1 taza) más 100 ml de fruta.</li></ul>`,
+`<h3>BLW: alimentación guiada por el bebé</h3><p>El adulto ofrece y el bebé decide qué y cuánto comer, sentado a la mesa con la familia.</p><ul class="t"><li><b>Arcada:</b> reflejo protector y ruidoso; el bebé empuja el alimento hacia adelante. Déjalo resolver solo.</li><li><b>Atragantamiento:</b> tose o se queja, pero entra aire. Déjalo toser.</li><li><b>Asfixia:</b> no tose, no llora ni respira. Es una emergencia: pide ayuda y haz las maniobras de desobstrucción.</li></ul>`,
+`<div class="grid">`+[
+bl("✅ ¿Cuándo iniciar?",["6 meses o más","Sentado, erguido y sin apoyo (brazos libres)","Perdió el reflejo de extrusión","Muestra interés por la comida","Se lleva objetos a la boca","Deseable: curso de manejo de asfixia"]),
+bl("🪑 Materiales",["Silla o trona estable","Babero de manga larga","Plato con ventosa y vaso de aprendizaje","Alfombra o mantel para facilitar la limpieza"]),
+bl("🍽️ Cómo iniciar",["Siéntalo a la mesa con la familia","Leche materna antes: sin mucho sueño ni hambre","Sin presiones ni distracciones (pantallas, juguetes, música)","Sé su ejemplo y deja que experimente texturas, olores y sabores","Limpia cuando termine","Ofrece lo mismo que come la familia, si es saludable"]),
+bl("📏 Tamaño y consistencia",["Trozos más grandes que su puño, alargados y blandos (finger foods)","Si los dedos pueden, las encías también","Legumbres y arroz: bolitas, bastones, hamburguesas o tortillas antes de la pinza","Parte con poco: 3 bastones","Grandes al principio; más pequeños cuando aparece la pinza (8–11 meses)"]),
+bl("🥩 Qué ofrecer",["Hierro: vacuno, pavo, pollo, pescado, legumbres","Energía: pasta, pan, papa, quínoa, palta, aceite de oliva","Cada comida: proteína + cereal + verdura y/o fruta","No más de 30–40 g de carne o pescado al día","Corta la carne en tiras, siguiendo las fibras"]),
+bl("🔁 Frecuencia y progreso",["2 a 3 veces al día al inicio; 4 veces a los 9 meses","Alimento nuevo de uno en uno, durante el día","Con los días, comidas de 3 o 4 alimentos (1 pieza de cada uno)","Registra lo probado y planifica los próximos"]),
+bl("⚠️ Seguridad",["Evita enteros: frutos secos, uvas, cerezas, tomate cherry, aceitunas, cabritas y dulces","Uvas en cuartos a lo largo; manzana rallada, o cocida y pelada","Siempre sentado y acompañado"]),
+bl("🙂 Si no le gusta",["Vuelve a ofrecerlo más adelante","Prueba otra presentación","No asumas gustos todavía","Al principio comerá poco y jugará: es parte del proceso"])
+].join('')+`</div>`];
+$$('.cmp button').forEach(b=>b.onclick=()=>{$$('.cmp button').forEach(x=>x.setAttribute('aria-pressed',x==b));$('#method').innerHTML=meth[b.dataset.m]});
+$('#method').innerHTML=meth[0];
+// Calendar
+const fl=[["Palta"],["Plátano"],["Huevo","Fe"],["Brócoli","vC"],["Papaya","vC"],["Zanahoria"],["Mango","vC"],["Papa"],["Sandía"],["Pimentón rojo","vC"],["Naranja","vC"],["Berenjena"],["Pera"],["Zapallo italiano"],["Melón"],["Pescado","Fe"],["Tomate","vC"],["Zapallo"],["Lentejas","Fe"],["Pavo","Fe"],["Pollo","Fe"],["Carne de vacuno","Fe"],["Piña"],["Coliflor"],["Garbanzos","Fe"],["Salmón","Fe"],["Porotos verdes"],["Kiwi","vC"]];
+const stc=["#fff","#7CC6A4","#F6D96B","#F08A8A"],stm=["Sin registrar","Se lo come y le sienta bien","Se lo come pero le sienta mal","No se lo come: volver a ofrecerlo más adelante (exposición repetida)"];
+const cal=$('#cal'),cs=Array(28).fill(0);
+fl.forEach((f,i)=>{const b=document.createElement('button');b.className='day';b.innerHTML='<span>'+(i+1)+'</span>'+(f[1]?'<small class="tg">'+f[1]+'</small>':'');b.onclick=()=>{cs[i]=(cs[i]+1)%4;b.style.background=stc[cs[i]];$('#dayinfo').innerHTML='<b>Día '+(i+1)+': '+f[0]+'</b>'+(f[1]=="Fe"?" · fuente de hierro":f[1]=="vC"?" · vitamina C (ayuda a absorber el hierro)":"")+'<br>Estado: '+stm[cs[i]]};cal.append(b)});
+// Plate
+const order=["t","c","p","v","g","f"],req=["t","c","p","v","g"];
+const names={t:"Tubérculo",c:"Cereal",p:"Proteína",v:"Vegetal",g:"Grasa",f:"Postre (opcional)"};
+const cc={t:"#FFF1B8",c:"#FFE0C7",p:"#FAD4DE",v:"#CFEBDD",g:"#E3D9F5",f:"#FFE3A8",x:"#E8E8EE"};
+const items=[["Papa","t","50 g (1 unidad chica, tamaño de un huevo)"],["Arroz","c","10 g crudo (1 cucharada)"],["Fideos","c","10 g crudo"],["Avena","c","10 g crudo"],["Quínoa","c","10 g crudo"],["Pollo","p","30 g (1½ cajita de fósforos)"],["Pavo","p","30 g"],["Vacuno","p","30 g"],["Pescado","p","30 g"],["Huevo duro","p","½ unidad (9–10 meses)"],["Lentejas cocidas","p","70–80 g (½ taza)"],["Garbanzos cocidos","p","70–80 g (½ taza)"],["Porotos cocidos","p","70–80 g (½ taza)"],["Zapallo","v","60 g (¼ taza cocida)"],["Zanahoria","v","60 g (¼ taza cocida)"],["Betarraga","v","60 g (¼ taza cocida)"],["Brócoli","v","15 g (¼ taza cruda)"],["Espinaca","v","15 g (¼ taza cruda)"],["Zapallo italiano","v","15 g (¼ taza cruda)"],["Aceite vegetal crudo","g","5 g (1½ cucharadita)"],["Manzana","f","100 g (1 unidad chica)"],["Plátano","f","100 g"],["Durazno","f","100 g"],["Kiwi","f","100 g"],["Galletas con azúcar","x",""],["Caldo en cubo (sal)","x",""]];
+let chips=[];
+const foods=$('#foods'),plate=$('#plate');
+order.concat("x").forEach(k=>{const d=document.createElement('div');d.innerHTML='<div class="gl">'+(names[k]||"Para evitar")+'</div>';items.forEach((it,i)=>{if(it[1]!=k)return;const b=document.createElement('button');b.className='food';b.textContent=it[0];b.draggable=true;b.style.background=cc[k];b.ondragstart=e=>e.dataTransfer.setData('t',i);b.onclick=()=>add(i);d.append(b)});foods.append(d)});
+plate.ondragover=e=>{e.preventDefault();plate.classList.add('over')};plate.ondragleave=()=>plate.classList.remove('over');
+plate.ondrop=e=>{e.preventDefault();plate.classList.remove('over');add(+e.dataTransfer.getData('t'))};
+function add(i){const it=items[i];if(it[1]=='x'){$('#platemsg').textContent=it[0].startsWith("Galletas")?"Antes del año no se ofrece azúcar.":"Antes del año no se ofrece sal.";return}
+chips=chips.filter(j=>items[j][1]!=it[1]);chips.push(i);draw()}
+function draw(){chips.sort((a,b)=>order.indexOf(items[a][1])-order.indexOf(items[b][1]));
+plate.innerHTML=chips.length?'':'<span style="color:#6B6580">Arrastra aquí tus ingredientes</span>';
+chips.forEach(i=>{const s=document.createElement('span');s.className='chip';s.style.background=cc[items[i][1]];s.textContent=items[i][0]+' · '+items[i][2];plate.append(s)});
+const got=new Set(chips.map(i=>items[i][1]));
+$('#cats').innerHTML=order.map(k=>`<span class="${got.has(k)?'on':''}">${names[k]}</span>`).join('');
+const ok=req.every(k=>got.has(k));plate.classList.toggle('ok',ok);
+$('#platemsg').textContent=ok?"¡Papilla completa! Sírvela tibia (37 °C), sin sal ni azúcar. 🎉":!chips.length?"":!got.has('t')?"Falta el tubérculo: es el que da la consistencia cremosa.":"Faltan grupos: completa los 5 principales para una papilla balanceada."}
+$('#reset').onclick=()=>{chips=[];draw()};draw();
+// Texturas
+function rnd(sd){let s=sd;return()=>(s=s*16807%2147483647)/2147483647}
+const cubeCols=[["#F7A24E","#D9741C","#C86A18"],["#F6E7A9","#E2CF8A","#CDB872"],["#F4D3C2","#E2B8A3","#D0A28C"],["#9CCB7A","#7FB35E","#6AA04C"]];
+function cube(x,y,s,c){return `<g><polygon points="${x},${y} ${x+s},${y+s/2} ${x},${y+s} ${x-s},${y+s/2}" fill="${c[0]}"/><polygon points="${x-s},${y+s/2} ${x},${y+s} ${x},${y+s*1.9} ${x-s},${y+s*1.4}" fill="${c[1]}"/><polygon points="${x+s},${y+s/2} ${x},${y+s} ${x},${y+s*1.9} ${x+s},${y+s*1.4}" fill="${c[2]}"/></g>`}
+const TXP=[{col:"#EFA55B",bf:.008,ss:1.2,k:.3},{col:"#EBAE6C",bf:.7,ss:2.4,k:.55},{col:"#F0B574",bf:.045,ss:4.5,k:.8},{col:"#F7EBD2",bf:.02,ss:1,k:1.3}];
+function scene(n){const p=TXP[n],r=rnd(n+7),id=n+1;let surf="",blob="";
+if(n==1)for(let i=0;i<170;i++){const a=r()*6.283,d=Math.sqrt(r())*.95;surf+=`<circle cx="${130+Math.cos(a)*d*88}" cy="${118+Math.sin(a)*d*38}" r="${.8+r()*1.3}" fill="${r()>.5?'#C9803A':'#F7CB8E'}" opacity=".7"/>`}
+if(n==2){for(let i=0;i<36;i++){const a=r()*6.283,d=Math.sqrt(r())*.88;surf+=`<ellipse cx="${130+Math.cos(a)*d*86}" cy="${118+Math.sin(a)*d*36}" rx="${4+r()*5}" ry="${3+r()*3.5}" fill="${['#F3BE80','#E79F52','#F8D9A0','#B9C96B'][i%4]}" filter="url(#f${id})"/>`}
+for(let i=0;i<4;i++)surf+=`<path d="M${70+i*9},${96+i*3} Q130,${126+i*3} ${190-i*9},${100+i*5}" stroke="#7A4A1A" stroke-opacity=".22" stroke-width="2.2" fill="none"/>`}
+if(n==3){const L=[];for(let i=0;i<20;i++){const a=r()*6.283,d=Math.sqrt(r())*.78,y=106+Math.sin(a)*d*28;L.push([y,cube(130+Math.cos(a)*d*80,y,9+r()*4,cubeCols[i%4])])}surf=L.sort((a,b)=>a[0]-b[0]).map(x=>x[1]).join('')}
+if(n<3)blob=`<ellipse rx="19" ry="9" fill="${p.col}" filter="url(#f${id})"/>`+(n==2?'<ellipse cx="-8" cy="-6" rx="6" ry="4" fill="#F8D9A0"/><ellipse cx="8" cy="-5" rx="5" ry="4" fill="#E79F52"/>':'');
+else blob=cube(-10,-12,7,cubeCols[0])+cube(2,-14,7,cubeCols[1])+cube(10,-8,6,cubeCols[2]);
+return `<svg viewBox="0 0 360 230" class="tsvg" role="img" aria-label="Plato con la textura"><defs><filter id="f${id}" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="${p.bf}" numOctaves="3" seed="${id}" result="n"/><feDiffuseLighting in="n" lighting-color="#fff" surfaceScale="${p.ss}" result="l"><feDistantLight azimuth="225" elevation="58"/></feDiffuseLighting><feComposite in="SourceGraphic" in2="l" operator="arithmetic" k1="1.15" k2="0" k3="0" k4="0"/></filter><radialGradient id="bg${id}" cx="40%" cy="30%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#E9E2F2"/></radialGradient><clipPath id="cp${id}"><ellipse cx="130" cy="118" rx="92" ry="40"/></clipPath></defs><ellipse cx="140" cy="196" rx="130" ry="14" fill="#3B3550" opacity=".1"/><ellipse cx="130" cy="130" rx="112" ry="64" fill="url(#bg${id})" stroke="#DCD3EA"/><ellipse cx="130" cy="122" rx="98" ry="46" fill="#F3EEF9"/><ellipse cx="130" cy="118" rx="92" ry="40" fill="${p.col}" ${n<3?`filter="url(#f${id})"`:''}/><g clip-path="url(#cp${id})">${surf}</g>${n==0?'<ellipse cx="100" cy="104" rx="34" ry="8" fill="#fff" opacity=".28"/>':''}<g id="sp"><line x1="300" y1="150" x2="338" y2="40" stroke="#D9A66B" stroke-width="11" stroke-linecap="round"/><ellipse cx="300" cy="150" rx="26" ry="15" fill="#E7BC85" stroke="#C99557"/><g id="fd" transform="translate(300 147)">${blob}</g></g></svg>`}
+const tx=[
+{n:"Papilla",a:"desde los 6 meses",v:"Puré suave, liso y uniforme, sin grumos ni fibra (para no estimular el reflejo de extrusión). Color parejo y brillo suave.",s:"Cremosa y aterciopelada; se traga sin masticar. Se sirve tibia (37 °C).",p:"Cae lento de la cuchara y deja una capa pegada.",i:"🎃 Zapallo · 🥔 Papa · 🍚 Arroz · 🍗 Pollo",e:["Sopa puré: papa, zapallo, arroz y pollo, con aceite crudo","Puré de papa con zanahoria y pescado (desde 6–7 meses)","Postre: manzana o plátano cocidos y pasados, sin azúcar"],t:"No soples la comida ni la pruebes con la misma cuchara que usas para dársela."},
+{n:"Puré grueso / molido",a:"8 a 9 meses (incisivos superiores)",v:"Puré más espeso, de grano fino y parejo, sin trozos visibles.",s:"Espeso, con granos blandos que se deshacen con la lengua y las encías.",p:"Se desliza en bloque, sin gotear.",i:"🥔 Papa · 🥕 Zanahoria · 🍗 Pollo desmenuzado fino",e:["Papa y zapallo molidos con carne desmenuzada muy fina","Arroz bien cocido molido con zanahoria","Legumbres molidas (desde 7–8 meses)"],t:"Avanza de a poco: mezcla papilla y molido durante unos días."},
+{n:"Molido con tenedor",a:"desde los 12 meses (primeros molares)",v:"Grumos blandos visibles, del tamaño de una lenteja, con marcas de tenedor.",s:"Pide algo de masticación; los trozos se aplastan al presionarlos con la lengua.",p:"Se desprende en grumos blandos.",i:"🫘 Lentejas · 🎃 Zapallo · 🐟 Pescado",e:["Lentejas con zapallo aplastados con tenedor","Pescado desmenuzado con papa","Fideos bien cocidos y picados con verduras"],t:"Aplasta con tenedor en lugar de licuar. Si hace arcadas, vuelve un paso atrás."},
+{n:"Picado y trozos blandos",a:"blandos con los dedos desde los 8–10 meses; picado desde los 18 meses",v:"Trocitos pequeños y distinguibles, o bastones y cubos blandos, cada alimento por separado.",s:"Requiere masticar, pero se aplasta fácil entre dos dedos (si los dedos pueden, las encías también).",p:"Los trozos ruedan por separado.",i:"🥕 Zanahoria · 🥔 Papa · 🍗 Pollo · 🥦 Brócoli",e:["Palta, plátano o pera en trozos blandos o rallados","Carne deshilachada y zanahoria rallada","Verduras cocidas en cubitos pequeños"],t:"Los alimentos enteros solo con todos los molares (después de los 2 años). Evita maní, nueces, uvas enteras y dulces."}];
+const txt=$('#txtabs'),txp=$('#txpanel');let cur=0;
+function tiltSp(v){const k=TXP[cur].k;$('#sp').setAttribute('transform','rotate('+(-v*.55)+' 300 150)');$('#fd').setAttribute('transform','translate('+(300-v*k*.22)+' '+(147+v*k*.1)+')')}
+function showTx(i){cur=i;[...txt.children].forEach((b,j)=>b.setAttribute('aria-selected',i==j));const x=tx[i];
+txp.innerHTML=`<div class="txg"><div><div class="zw">${scene(i)}</div><div style="display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap"><button class="tab" id="zb">🔍 Ver de cerca</button><label style="font:600 .95rem Fredoka;flex:1;min-width:150px">Inclina la cuchara<input type="range" id="tilt" min="0" max="100" value="0"></label></div><p style="font-size:.95rem;margin:8px 0 0">🥄 ${x.p}</p></div><div><h3>${x.n} <small style="font:600 1rem Nunito;color:var(--soft)">· ${x.a}</small></h3><p><b>👀 Cómo se ve:</b> ${x.v}</p><p><b>🤲 Cómo se siente:</b> ${x.s}</p><p><span class="ing">${x.i}</span></p><p style="margin-bottom:6px"><b>🍽️ Ejemplos:</b></p><ul class="t">${x.e.map(e=>'<li>'+e+'</li>').join('')}</ul><p style="margin:12px 0 0"><b>💡 Consejo:</b> ${x.t}</p></div></div>`;
+$('#zb').onclick=()=>$('.tsvg').classList.toggle('z');$('#tilt').oninput=e=>tiltSp(+e.target.value)}
+tx.forEach((x,i)=>{const b=document.createElement('button');b.className='tab';b.textContent=x.n;b.onclick=()=>showTx(i);txt.append(b)});showTx(0);
+// Bad foods
+const bad=[["Sal","Sobrecarga el riñón inmaduro."],["Azúcar y edulcorantes","Acostumbran al paladar a lo dulce y no aportan nutrientes."],["Miel","Riesgo de botulismo infantil."],["Leche de vaca entera","No antes del año como bebida principal: exceso de sodio y proteínas."],["Frutos secos enteros","Riesgo de asfixia."],["Uvas, cerezas, tomate cherry y aceitunas enteros","Riesgo de asfixia: córtalos a lo largo."],["Cabritas y dulces duros","Riesgo de asfixia."],["Jugos y bebidas azucaradas","Aportan azúcar y desplazan alimentos completos."],["Procesados “Altos en”","Exceso de sodio, azúcares o grasas."],["Bebidas de arroz y soja","Exceso de arsénico (arroz) y fitoestrógenos (soja)."],["Algas","Exceso de yodo."],["Pescados grandes y crustáceos","Altos niveles de cadmio y mercurio (el salmón sí)."],["Carne y huevo crudos o poco cocidos","Riesgo de infecciones."]];
+function showBad(){const v=$('#q').value.toLowerCase();const r=bad.filter(b=>(b[0]+b[1]).toLowerCase().includes(v));$('#bads').innerHTML=r.length?r.map(b=>`<div class="bad"><b>${b[0]}</b><br>${b[1]}</div>`).join(''):'<div class="bad">No aparece en la lista. Si tienes dudas, consulta a tu equipo de salud.</div>'}
+$('#q').oninput=showBad;showBad();
+</script>
+</body>
+</html>
